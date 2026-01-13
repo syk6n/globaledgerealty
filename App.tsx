@@ -5,6 +5,7 @@ import WhyInvest from './components/WhyInvest';
 import Founder from './components/Founder';
 import LeadForm from './components/LeadForm';
 import Footer from './components/Footer';
+import Partners from './components/Partners';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Hero />
+        <Partners />
         <WhyInvest />
         <Founder />
         <LeadForm />

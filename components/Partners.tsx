@@ -1,0 +1,69 @@
+import React from 'react';
+
+const partners = [
+  { name: 'Emaar', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Emaar_Properties_logo.svg' },
+  { name: 'DLF', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/df/DLF_logo.svg' },
+  { name: 'Damac', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Damac_Properties_Logo.jpg' },
+  { name: 'Sobha', logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Sobha_Limited_Logo.png' },
+  { name: 'Nakheel', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Nakheel_Logo.svg' },
+  { name: 'Godrej', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Godrej_Group_Logo.svg' },
+  { name: 'Danube', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Danube_Group_logo.png' },
+  { name: 'Meraas', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Meraas_logo.jpg' },
+  { name: 'Prestige', logo: 'https://upload.wikimedia.org/wikipedia/en/8/83/Prestige_Group_Logo.jpg' },
+];
+
+const Partners: React.FC = () => {
+  return (
+    <section className="py-12 bg-black border-b border-white/5 overflow-hidden relative">
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .partner-marquee {
+            animation: scroll 40s linear infinite;
+          }
+          .partner-marquee:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
+      
+      <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
+        <p className="text-gold-500 text-xs tracking-[0.3em] uppercase font-sans">Official Channel Partners</p>
+      </div>
+
+      <div className="relative w-full">
+        {/* Gradient Masks for smooth fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+        <div className="flex w-max partner-marquee">
+          {/* Double the list for infinite seamless scrolling */}
+          {[...partners, ...partners].map((partner, index) => (
+            <div key={`${partner.name}-${index}`} className="flex items-center justify-center mx-8 md:mx-12 min-w-[120px] md:min-w-[160px] group opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <img 
+                src={partner.logo} 
+                alt={`${partner.name} Logo`} 
+                className="h-12 md:h-16 w-auto object-contain transition-all duration-300 filter brightness-0 invert group-hover:invert-0 group-hover:brightness-100 group-hover:sepia group-hover:hue-rotate-5 group-hover:saturate-200"
+                // The filter logic: 
+                // brightness-0 invert -> Makes the image White (for black bgs)
+                // On Hover: Remove filters or apply specific gold tinting if possible, 
+                // but resetting to original colored logo on hover is a nice touch, 
+                // or keeping it white/bright is fine.
+                // For this specific design, we want white by default.
+                style={{ 
+                   // Special handling for JPGs with white backgrounds to blend into black
+                   mixBlendMode: partner.logo.endsWith('.jpg') ? 'screen' : 'normal'
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Partners;
