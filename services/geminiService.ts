@@ -1,6 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || 'FAKE_API_KEY_FOR_DEVELOPMENT' });
 
 export const askInvestmentAdvisor = async (question: string): Promise<string> => {
   try {
@@ -32,4 +33,3 @@ export const askInvestmentAdvisor = async (question: string): Promise<string> =>
     console.error("Gemini API Error:", error);
     return "Our AI advisor is momentarily offline. Please fill out the contact form for a personalized consultation.";
   }
-};
