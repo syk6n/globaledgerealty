@@ -42,26 +42,26 @@ const WhyInvest: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           
           {/* Chart Section */}
-          <div className="bg-luxury-slate p-8 rounded-sm border border-white/5 shadow-2xl">
+          <div className="bg-luxury-slate p-8 rounded-sm border border-white/5 shadow-2xl w-full">
             <h4 className="text-white font-serif text-2xl mb-2">Property Value Appreciation Index</h4>
             <p className="text-gray-400 text-sm mb-6">Consistent growth in luxury sector (2019-2025 Projection)</p>
-            <div className="h-[300px] w-full">
+            <div className="h-[300px] w-full min-h-[300px]" style={{ minWidth: 0 }}>
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={data}>
+                <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                   <defs>
                     <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#D4AF37" stopOpacity={0.3}/>
                       <stop offset="95%" stopColor="#D4AF37" stopOpacity={0}/>
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                  <XAxis dataKey="year" stroke="#666" />
-                  <YAxis stroke="#666" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
+                  <XAxis dataKey="year" stroke="#666" tick={{fill: '#9ca3af'}} axisLine={false} tickLine={false} dy={10} />
+                  <YAxis stroke="#666" tick={{fill: '#9ca3af'}} axisLine={false} tickLine={false} dx={-10} />
                   <Tooltip 
-                    contentStyle={{ backgroundColor: '#1a1a1a', borderColor: '#D4AF37', color: '#fff' }}
+                    contentStyle={{ backgroundColor: '#0a0a0a', borderColor: '#D4AF37', color: '#fff' }}
                     itemStyle={{ color: '#D4AF37' }}
                   />
-                  <Area type="monotone" dataKey="price" stroke="#D4AF37" fillOpacity={1} fill="url(#colorPrice)" />
+                  <Area type="monotone" dataKey="price" stroke="#D4AF37" strokeWidth={2} fillOpacity={1} fill="url(#colorPrice)" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>

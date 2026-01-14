@@ -1,15 +1,15 @@
 import React from 'react';
 
 const partners = [
-  { name: 'Emaar', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Emaar_Properties_logo.svg' },
-  { name: 'DLF', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/df/DLF_logo.svg' },
-  { name: 'Damac', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Damac_Properties_Logo.jpg' },
-  { name: 'Sobha', logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Sobha_Limited_Logo.png' },
-  { name: 'Nakheel', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Nakheel_Logo.svg' },
-  { name: 'Godrej', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Godrej_Group_Logo.svg' },
-  { name: 'Danube', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Danube_Group_logo.png' },
-  { name: 'Meraas', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Meraas_logo.jpg' },
-  { name: 'Prestige', logo: 'https://upload.wikimedia.org/wikipedia/en/8/83/Prestige_Group_Logo.jpg' },
+  { name: 'Emaar', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Emaar_logo.svg/1280px-Emaar_logo.svg.png' },
+  { name: 'DLF', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/DLF_logo.svg' },
+  { name: 'Damac', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Damac_logo.svg/3840px-Damac_logo.svg.png' },
+  { name: 'Sobha', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Sobha_%28company%29.svg/3840px-Sobha_%28company%29.svg.png' },
+  { name: 'Nakheel', logo: 'https://zahabihomes.com/wp-content/uploads/2024/06/Nakheel_3.png' },
+  { name: 'Godrej', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Godrej_Logo.svg/1280px-Godrej_Logo.svg.png' },
+  { name: 'Danube', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Danube_Properties.png/960px-Danube_Properties.png' },
+  { name: 'Meraas', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Meraas-logo.svg' },
+  { name: 'Prestige', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Prestige_Group.png' },
 ];
 
 const Partners: React.FC = () => {
